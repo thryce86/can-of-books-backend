@@ -50,18 +50,34 @@ app.get('/books' , getBooks);
 
 
   // Returns All Books 
-  async function getBooks(request , response , next ){
+  // async function getBooks(request , response , next ){
 
-    try{
-      let output = await BookModel.find() ;
-      response.status(200).send(output);
+  //   try{
+  //     let output = await BookModel.find() ;
+  //     response.status(200).send(output);
     
-        }
-    catch(error){
-      next(error);
+  //       }
+  //   catch(error){
+  //     next(error);
     
-        }
+  //       }
 
+  // }
+
+
+  // http://localhost:3002/books?title=A
+
+  async function getBooks(request, response, next) {
+    try {
+      let queryObject = {}
+      if (request.query.title) {
+        queryObject.title = request.query.title;
+      }
+      let results = await BookModel.find(queryObject);
+      response.status(200).send(results);
+    } catch(err) {
+      next(err);
+    }
   }
 
 
@@ -140,7 +156,9 @@ app.delete('/books/:id' , deleteBook) ;
 //************************************************************************* */
 //************************************************************************* */
 
-
+app.use((error, request, response, next) => {
+  response.status(500).send(error.message);
+});
 
 
 //////////////////////////////////////////////////////////////////////////////
