@@ -5,7 +5,21 @@ const express = require('express');
 const cors = require('cors');
 
 //////////////////////
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_KEY);
+
+
+
+
+const booksModel = require('./models/Book.js');
+
+
+// add validation to confirm we are wired up to our mongo DB
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  console.log('Mongoose is connected');
+});
 
 //////////////////////
 
@@ -24,12 +38,51 @@ app.get('/test', (request, response) => {
 })
 
 
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+// import schema 
+
+
+app.get('/books' , getBooks); 
+
+
+  // Returns All Books 
+  async function getBooks(request , response , next ){
+
+    try{
+      let output = await booksModel.find() ;
+      response.status(200).send(output);
+    
+        }
+    catch(error){
+      next(error);
+    
+        }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 app.get('/', (req, res) => {
-  res.status(200).send('This works');
+  res.status(200).send('works');
 });
 
 
