@@ -59,6 +59,13 @@ Actual time needed to complete: 5hr 14 min
 --------   0625 pm  -  Both front and back are in the cloud. 
 --------   0625 pm  -  Mongoose connected made schema.
 --------   0840 pm  -  Backend is up responds with books.  Pushing to heroku
+
+4/26/2022  0400 pm  -  Started
+4/26/2022  0513 pm  -  Post will write to the database 
+4/26/2022  0530 pm  -  Post and delete will both work on the remote database.
+
+
+
 ## Estimates
 <!-- See below -->
 
