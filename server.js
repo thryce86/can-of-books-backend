@@ -10,7 +10,8 @@ mongoose.connect(process.env.MONGO_KEY);
 
 
 
-const booksModel = require('./models/Book.js');
+// const booksModel = require('./models/Book.js');
+const BookModel = require('./models/Book.js');
 
 
 // add validation to confirm we are wired up to our mongo DB
@@ -31,10 +32,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 app.get('/test', (request, response) => {
- 
-  
   response.send('test request received')
-
 })
 
 
@@ -55,7 +53,7 @@ app.get('/books' , getBooks);
   async function getBooks(request , response , next ){
 
     try{
-      let output = await booksModel.find() ;
+      let output = await BookModel.find() ;
       response.status(200).send(output);
     
         }
@@ -73,6 +71,75 @@ app.get('/books' , getBooks);
 app.get('/', (req, res) => {
   res.status(200).send('works');
 });
+
+
+
+
+
+
+//************************************************************************* */
+//************************************************************************* */
+//************************************************************************* */
+// Lab 12 
+
+// app.post('/cats', postCats);
+// app.delete('/cats/:id', deleteCats);
+
+app.use(express.json());
+
+
+// send new book
+app.post('/books' , postBook) ;
+
+
+async function postBook( request , response , next ){
+  console.log( request.body);
+
+  try{
+      let createdBook = await BookModel.create(request.body);
+
+      // response.status(200).send('WORKS');  // WORKS
+      response.status(200).send( createdBook );
+     } 
+  catch(error){
+              next(error) ;
+              }
+
+
+}
+
+// route to delete a book by id 
+
+
+
+app.delete('/books/:id' , deleteBook) ;
+
+    async function deleteBook(request , response , next)  {
+      // get id from path 
+      let id = request.params.id;
+      console.log(id) ;
+
+      try{
+
+            await BookModel.findByIdAndDelete(id) ;
+            response.status(200).send('book deleted') ;
+
+      }catch(error){
+            next(error) ;
+        }
+
+
+
+
+      }
+
+
+
+
+//************************************************************************* */
+//************************************************************************* */
+//************************************************************************* */
+
 
 
 
