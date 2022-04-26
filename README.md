@@ -31,9 +31,9 @@ Estimate of time needed to complete: 5
 
 Start time: 330
 
-Finish time: _____
+Finish time: 08433
 
-Actual time needed to complete: _____
+Actual time needed to complete: 5hr 14 min
 
 
 ###################################################################################################################################
@@ -42,27 +42,29 @@ Actual time needed to complete: _____
 
 
 
-# Project Name
+# Can of Books
 
-**Author**: Team Member Names Goes Here
+**Author**: Stanley Wilder
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+<!-- returns books-->
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+<!-- get books from server process them on front end  -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+<!-- JS html   css react mongo -->
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-4/25/2022  0330 pm - Started 
---         0430 pm -  Built App wont connect  
-
+4/25/2022  0330 pm -  Started 
+--         0430 pm -   Built App wont connect  
+--------   0625 pm  -  Both front and back are in the cloud. 
+--------   0625 pm  -  Mongoose connected made schema.
+--------   0840 pm  -  Backend is up responds with books.  Pushing to heroku
 ## Estimates
 <!-- See below -->
 
