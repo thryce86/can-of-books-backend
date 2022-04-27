@@ -1,12 +1,10 @@
 'use strict';
 
-
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-//////////////////////
+//////////////////
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_KEY);
 
@@ -136,6 +134,7 @@ app.delete('/books/:id' , deleteBook) ;
       // get id from path 
       let id = request.params.id;
       console.log(id) ;
+       console.log(id) ;
 
       try{
 
@@ -173,7 +172,7 @@ app.get('*', (request, response) => {
   response.send('Not sure what you are a looking for, but it isn\'t here.');
 });
 
-//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
     
