@@ -24,7 +24,7 @@ await Book.create({
 
 await Book.create({
   title: 'Sea of Tranquility: A novel' ,
-  description:  "NEW YORK TIMES BEST SELLER • The award-winning, best-selling author of Station Eleven and The Glass Hotel returns with a novel of art, time, love, and plague that takes the reader from Vancouver Island in 1912 to a dark colony on the moon five hundred years later, unfurling a story of humanity across centuries and space",
+  description:  "NEW YORK TIMES BEST SELLEotel returns with a novel of art, time, love, and plague that takes the reader from Vancouver Island in 1912 to a dark colony on the moon five hundred years later, unfurling a story of humanity across centuries and space",
   status:   'In print ' ,
 })
 
