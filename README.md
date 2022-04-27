@@ -54,15 +54,30 @@ Actual time needed to complete: 5hr 14 min
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-4/25/2022  0330 pm -  Started 
+4/25/2022  0330 pm -   Started 
 --         0430 pm -   Built App wont connect  
 --------   0625 pm  -  Both front and back are in the cloud. 
 --------   0625 pm  -  Mongoose connected made schema.
 --------   0840 pm  -  Backend is up responds with books.  Pushing to heroku
 
+Name of feature: Day 2
+
+Estimate of time needed to complete: 5
+
+Start time: 0400
+
+Finish time: 1030
+
+Actual time needed to complete: 6.5 hrs
+
 4/26/2022  0400 pm  -  Started
 4/26/2022  0513 pm  -  Post will write to the database 
 4/26/2022  0530 pm  -  Post and delete will both work on the remote database.
+4/26/2022  1000 pm  -  heroku finally works.  everything is done.
+
+
+
+
 
 
 
