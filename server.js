@@ -69,6 +69,7 @@ app.get('/books' , getBooks);
   // http://localhost:3002/books?title=A
 
   async function getBooks(request, response, next) {
+    console.log('getting books') ;
     try {
       let queryObject = {}
       if (request.query.title) {
@@ -86,7 +87,7 @@ app.get('/books' , getBooks);
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 app.get('/', (req, res) => {
-  res.status(200).send('works');
+  res.status(200).send('still works');
 });
 
 
@@ -133,9 +134,9 @@ app.delete('/books/:id' , deleteBook) ;
 
     async function deleteBook(request , response , next)  {
       // get id from path 
-      let id = request.params.id;
-      console.log(id) ;
-       console.log(id) ;
+      let id1 = request.params.id1;
+      console.log(id1) ;
+       console.log(id1) ;
 
       try{
 
